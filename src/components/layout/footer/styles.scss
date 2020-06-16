@@ -1,0 +1,13 @@
+.footer-component {
+  &__main-container {
+    padding: 0 15px;
+    height: 50px;
+    background: antiquewhite;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
+}

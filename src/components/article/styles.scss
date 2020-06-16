@@ -1,0 +1,25 @@
+@import '../../scss/mediaQueries';
+
+.article-component {
+  &__main-container {
+    background: gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 10px);
+    margin: 5px;
+    padding: 15px;
+    border-radius: 5px;
+
+    @include for-tablet-and-up {
+      width: calc(50% - 10px);
+      margin: 5px;
+    }
+
+    @include for-desktop-and-up {
+      width: calc(25% - 10px);
+      margin: 5px;
+    }
+  }
+}

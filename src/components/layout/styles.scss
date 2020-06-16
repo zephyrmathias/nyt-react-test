@@ -1,0 +1,7 @@
+.layout-component {
+  &__children-container {
+    background: #FDFDFD;
+    min-height: calc(100vh - 100px);
+    padding: 15px;
+  }
+}

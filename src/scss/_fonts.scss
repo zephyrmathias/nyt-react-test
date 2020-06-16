@@ -1,0 +1,14 @@
+@mixin font-face($input-name, $input-path, $input-type: 'ttf') {
+  font-family: $input-name;
+  src: url($input-path + $input-name + '.' + $input-type);
+}
+
+$font-base-path: '../assets/fonts/';
+
+@font-face {
+  @include font-face('BalsamiqSans', $font-base-path);
+}
+
+@font-face {
+  @include font-face('MuseoModerno', $font-base-path);
+}

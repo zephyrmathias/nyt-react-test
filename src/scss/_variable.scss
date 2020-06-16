@@ -1,0 +1,13 @@
+$achromatic-colors: (
+  'strong': #000,
+  'light': #fff,
+  'border': #e5e6e7,
+  'error-text': #ff5e6c,
+  'error-container': #ffd8df,
+);
+
+$current-color-palette: $achromatic-colors;
+
+@function preset-color($key: 'primary') {
+  @return map-get($current-color-palette, $key);
+}

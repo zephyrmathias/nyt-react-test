@@ -12,7 +12,6 @@ npm run start
 
 ## To Build This Project
 
-- Then, build all necessary files
 ```sh
 npm run build
 ```

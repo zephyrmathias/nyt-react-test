@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "components": ["components"],
+      "lib": ["lib"],
+      "pages": ["pages"],
+      "scss": ["scss"],
+      "redux-store": ["redux-store"]
+    }
+  },
+  "exclude": [
+    "dist",
+    "node_modules"
+  ]
+}

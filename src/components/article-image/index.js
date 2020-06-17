@@ -4,11 +4,8 @@ import PropTypes from 'prop-types';
 import './styles.scss'
 
 const articleImage = (props) => {
-  console.log('props', props)
   const { detail, isArticleDetail } = props
-
   const imageLocation = detail.media || null
-  console.log('imageLocation', imageLocation)
 
   let imageUrl = 'src/assets/img/new-york-times-dark.jpg'  ;
   if (imageLocation?.length > 0 && imageLocation[0]?.type === 'image') {

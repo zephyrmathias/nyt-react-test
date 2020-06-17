@@ -39,6 +39,7 @@ const mapStateToProps = (state) => {
     articles: state.newsArticles.payload,
     isArticlesFetching: state.newsArticles.isFetching,
     searchedArticles: state.newsArticles.searchedArticles,
+    orderBy: state.newsArticles.orderBy
   } 
 }
 

@@ -52,7 +52,14 @@ const articleReducer = (state = INITIAL_STATE, action) => {
       const ascendingData = dataToSortAscending.sort(function(a, b) {
         return new Date(a.pub_date || a.published_date) - new Date(b.pub_date || b.published_date);
       })
-      console.log('Ascending', ascendingData)
+
+      if (state?.searchedArticles) {
+        return {
+          ...state,
+          searchedArticles: ascendingData,
+          orderBy: 'ascendingSearch',
+        };
+      }
 
       return {
         ...state,
@@ -66,7 +73,14 @@ const articleReducer = (state = INITIAL_STATE, action) => {
       const descendingData = dataToSortDescending.sort(function(a, b) {
         return new Date(b.pub_date || b.published_date) - new Date(a.pub_date || a.published_date);
       })
-      console.log('descendingData', descendingData)
+
+      if (state?.searchedArticles) {
+        return {
+          ...state,
+          searchedArticles: descendingData,
+          orderBy: 'descendingSearch',
+        };
+      }
 
       return { 
         ...state,

@@ -41,6 +41,7 @@ const searchInput = (props) => {
         ref={inputSearchArticle}
         id="article-search-input"
         placeholder="Search News"
+        value={searchText}
         className={`search-input-component__input ${showInput ? 'active' : ''} `}
         onChange={(e) => setSearchText(e.target.value)}
       />

@@ -8,8 +8,6 @@ const articleSkeleton = () => {
     <div className="article-skeleton-component__main-container">
       <ContentLoader
         speed={2}
-        primaryColor="#f3f3f3"
-        secondaryColor="#ecebeb"
         width={'100%'}
         height={350}
       >

@@ -8,7 +8,7 @@ const loading = (props) => {
   return (
     <div className="loading-component__main-container">
       {[...Array(props.elementsLoading)].map((e, i) => {
-        return <ArticleSkeleton />
+        return <ArticleSkeleton key={i} />
       })}
     </div>
   )

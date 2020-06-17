@@ -20,26 +20,51 @@ const INITIAL_STATE = {
 const articleReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case FETCH_ARTICLE_REQUEST:
-      return { ...state, isFetching: true };
+      return {
+        ...state,
+        isFetching: true
+      };
+
     case FETCH_ARTICLE_SUCCESS:
-      return { ...state, isFetching: false, payload: action.payload };
+      return {
+        ...state,
+        isFetching: false,
+        payload: action.payload
+      };
+
     case SEARCH_ARTICLE_SUCCESS:
-      return { ...state, isFetching: false, searchedArticles: action.payload };
+      return {
+        ...state,
+        isFetching: false,
+        searchedArticles: action.payload
+      };
+
     case FETCH_ARTICLE_FAILURE:
-      return { ...state, isFetching: false, error: action.error };
+      return {
+        ...state,
+        isFetching: false,
+        error: action.error
+      };
+
     case SORT_DATA_ASCENDING:
-      const ascendingData = state?.payload?.sort(function(a, b) {
-        return new Date(a.published_date) - new Date(b.published_date);
+      let dataToSortAscending = state?.searchedArticles || state?.payload
+
+      const ascendingData = dataToSortAscending.sort(function(a, b) {
+        return new Date(a.pub_date || a.published_date) - new Date(b.pub_date || b.published_date);
       })
       console.log('Ascending', ascendingData)
+
       return {
         ...state,
         payload: ascendingData,
         orderBy: 'ascending',
       };
+
     case SORT_DATA_DESCENDING:
-      const descendingData = state?.payload?.sort(function(a, b) {
-        return new Date(b.published_date) - new Date(a.published_date);
+      let dataToSortDescending = state?.searchedArticles || state?.payload
+
+      const descendingData = dataToSortDescending.sort(function(a, b) {
+        return new Date(b.pub_date || b.published_date) - new Date(a.pub_date || a.published_date);
       })
       console.log('descendingData', descendingData)
 
@@ -48,10 +73,20 @@ const articleReducer = (state = INITIAL_STATE, action) => {
         payload: descendingData,
         orderBy: 'descending',
       };
+
     case SAVE_SELECTED_ARTICLE:
-      return { ...state, selectedArticle: action.selectedArticle };
+      return {
+        ...state,
+        selectedArticle: action.selectedArticle
+      };
+
     case RESET_SEARCH_ARTICLE:
-      return { ...state, isFetching: false, searchedArticles: null };
+      return {
+        ...state,
+        isFetching: false,
+        searchedArticles: null
+      };
+
     default:
       return state;
   }

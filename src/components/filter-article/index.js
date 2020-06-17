@@ -9,10 +9,10 @@ const filterArticle = (props) => {
     <div className="filter-article-component__main-container">
       <span>Order By:</span>
       <div className="filter-article-component__order-buttons">
-        <button onClick={() => props.sortDataAscending()}>
+        <button onClick={() => props.sortDataDescending()}>
           Newest To Oldest
         </button>
-        <button onClick={() => props.sortDataDescending()}>
+        <button onClick={() => props.sortDataAscending()}>
           Oldest To Newest
         </button>
       </div>

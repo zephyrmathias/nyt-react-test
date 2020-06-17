@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import dayjs from 'dayjs'
 
 import { saveSelectedArticle } from 'redux-store/actions/articles'
 import ArticleImage from '../article-image'
@@ -14,6 +15,7 @@ const article = (props) => {
     props.saveSelectedArticle({article: detail})
     history.push('/detail');
   }
+  const publishedDate = dayjs(detail.pub_date || detail.published_date).format('DD MMM YYYY')
 
   return (
     <div 
@@ -25,7 +27,7 @@ const article = (props) => {
         {detail.headline?.main|| detail.title}
       </span>
       <span className="article-component__publishedDate">
-        {detail.published_date}
+        {publishedDate}
       </span>
       <span className="article-component__read-more">
         Read More

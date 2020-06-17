@@ -3,7 +3,7 @@
   src: url($input-path + $input-name + '.' + $input-type);
 }
 
-$font-base-path: '../assets/fonts/';
+$font-base-path: '../../assets/fonts/';
 
 @font-face {
   @include font-face('BalsamiqSans', $font-base-path);

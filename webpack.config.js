@@ -40,6 +40,16 @@ module.exports = {
           }
         }]
       },
+      {
+        test: /\.ttf$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: "[name].[ext]",
+            outputPath: "fonts/",
+          }
+        }]
+      },
     ]
   },
   plugins : [

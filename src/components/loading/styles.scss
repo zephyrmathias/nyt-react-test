@@ -1,0 +1,23 @@
+@import '../../scss/mediaQueries';
+
+.loading-component {
+  &__main-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    > div {
+      width: calc(100% - 10px);
+      margin: 5px;
+
+      @include for-tablet-and-up {
+        width: calc(50% - 10px);
+        margin: 5px;
+      }
+  
+      @include for-desktop-and-up {
+        width: calc(25% - 10px);
+        margin: 5px;
+      }
+    }
+  }
+}

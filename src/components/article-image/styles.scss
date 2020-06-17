@@ -1,0 +1,42 @@
+@import '../../scss/variable';
+
+.article-image-component {
+  &__main-container {
+    position: relative;
+    width: 100%;
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__image-with-copyright {
+    position: relative;
+    border: 1px solid preset-color('border');
+  }
+
+  &__section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: flex-end;
+    background: lightskyblue;
+    padding: 2px 5px;
+  }
+
+  &__copyright {
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    background: white;
+    opacity: 0.6;
+    padding: 2px 5px;
+    font-size: 12px;
+  }
+
+  &__caption {
+    font-size: 12px;
+    color: gray;
+  }
+}

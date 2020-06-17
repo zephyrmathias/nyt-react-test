@@ -1,6 +1,8 @@
+@import '../../scss/variable';
+
 .layout-component {
   &__children-container {
-    background: #FDFDFD;
+    background: preset-color('background-body');
     min-height: calc(100vh - 100px);
     padding: 15px;
   }

@@ -1,5 +1,21 @@
+@import '../../scss/fonts';
+
 .filter-article-component {
   &__main-container {
-  
+    display: flex;
+    flex-direction: column;
+    font-family: "BalsamiqSans";
+    padding-bottom: 15px;
+  }
+
+  &__order-buttons {
+    display: flex;
+    
+    > button {
+      padding: 2px 10px;
+      margin: 0 5px;
+      cursor: pointer;
+      font-family: "BalsamiqSans";
+    }
   }
 }

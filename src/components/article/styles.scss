@@ -1,16 +1,19 @@
 @import '../../scss/mediaQueries';
+@import '../../scss/fonts';
+@import '../../scss/variable';
 
 .article-component {
   &__main-container {
-    background: gray;
+    border: 1px solid preset-color('border');
+    background: #FFFAFA;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
     width: calc(100% - 10px);
     margin: 5px;
     padding: 15px;
     border-radius: 5px;
+    cursor: pointer;
 
     @include for-tablet-and-up {
       width: calc(50% - 10px);
@@ -21,5 +24,23 @@
       width: calc(25% - 10px);
       margin: 5px;
     }
+
+    &:hover {
+      box-shadow: 3px 4px 3px 3px rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  &__title {
+    padding-top: 10px;
+    font-family: "BalsamiqSans";
+  }
+
+  &__publishedDate {
+    padding-top: 10px;
+  }
+
+  &__read-more {
+    padding-top: 10px;
+    color: blue;
   }
 }
